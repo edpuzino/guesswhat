@@ -98,8 +98,8 @@ function questionSeven(){
     var i = 0;
     var correctAnswer = false;
     var states =['new jersey', 'arizona', 'colorado', 'arkansas', 'missouri'];
-    var chosenState = prompt('I have lived in five states besides Washington, can you guess any of them?  I\'ll give you seven tries this time.').toLowerCase();
-        while (( guesses < 7 ) && ( correctAnswer === false )) {  
+    var chosenState = prompt('I have lived in five states besides Washington, can you guess any of them?  I\'ll give you six tries this time.').toLowerCase();
+        while (( guesses < 6 ) && ( correctAnswer === false )) {  
             console.log(user +' has guessed ' + chosenState + ' for guess #' + guesses);    
             while ((chosenState != states[i]) && (i < states.length)) {            
             i++; 
@@ -107,7 +107,7 @@ function questionSeven(){
                 if (chosenState === states[i]) {
                     correctAnswer = true;
                 } else {
-                    var chosenState = prompt('Sorry, that was guess #' + guesses + ', please try again.').toLowerCase();
+                    var chosenState = prompt('Sorry, please try again. You have ' + (6 - guesses) + ' guesses left.').toLowerCase();
                 i = 0;
                 }
             guesses++   
